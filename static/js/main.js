@@ -249,3 +249,37 @@
   document.addEventListener('scroll', navmenuScrollspy);
 
 })();
+
+
+
+
+
+// Animate progress bars on page load
+window.addEventListener('load', function() {
+  const progressBars = document.querySelectorAll('.progress-bar');
+  
+  setTimeout(() => {
+    progressBars.forEach(bar => {
+      const progress = bar.getAttribute('data-progress');
+      bar.style.width = progress + '%';
+    });
+  }, 300);
+});
+
+// Optional: Animate when scrolling into view
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const progressBars = entry.target.querySelectorAll('.progress-bar');
+      progressBars.forEach(bar => {
+        const progress = bar.getAttribute('data-progress');
+        bar.style.width = progress + '%';
+      });
+    }
+  });
+}, { threshold: 0.5 });
+
+const skillsSection = document.querySelector('.skills-section');
+if (skillsSection) {
+  observer.observe(skillsSection);
+}

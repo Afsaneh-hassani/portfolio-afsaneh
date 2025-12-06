@@ -860,7 +860,7 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Services Section
+# services Section
 --------------------------------------------------------------*/
 .services .service-item {
   background-color: var(--surface-color);
@@ -1630,3 +1630,28 @@ section,
 .starter-section {
   /* Add your styles here */
 }
+
+
+
+
+
+.resume-item .pdf-link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.resume-item .pdf-link:hover {
+  transform: scale(1.1);
+}
+
+.resume-item .pdf-link i {
+  transition: color 0.3s ease;
+}
+
+.resume-item .pdf-link:hover i {
+  color: #d32f2f !important;
+}
+
+
