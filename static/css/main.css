@@ -906,9 +906,9 @@ section,
     border-color: var(--accent-color);
   }
 
-  .services .service-item:hover h3 {
+  /* .services .service-item:hover h3 {
     color: var(--accent-color);
-  }
+  } */
 }
 
 /*--------------------------------------------------------------
