@@ -283,3 +283,14 @@ const skillsSection = document.querySelector('.skills-section');
 if (skillsSection) {
   observer.observe(skillsSection);
 }
+
+
+
+
+
+
+
+
+
+
+

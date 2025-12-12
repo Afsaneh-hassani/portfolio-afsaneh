@@ -486,7 +486,7 @@
 
 </section><!-- /Services Section -->
 
-    <!-- Stats Section -->
+    {% comment %} <!-- Stats Section -->
     <section id="stats" class="stats section accent-background">
 
       <img src="{% static 'img/stats-bg.jpg' %}" alt="" data-aos="fade-in">
@@ -527,160 +527,136 @@
 
       </div>
 
-    </section><!-- /Stats Section -->
+    </section><!-- /Stats Section --> {% endcomment %}
 
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio section">
 
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Portfolio</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      </div><!-- End Section Title -->
 
-      <div class="container">
 
-        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+<!-- Portfolio Section -->
+<section id="portfolio" class="portfolio section">
 
-          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
-            <li data-filter="*" class="filter-active">All</li>
-            <li data-filter=".filter-app">App</li>
-            <li data-filter=".filter-product">Product</li>
-            <li data-filter=".filter-branding">Branding</li>
-            <li data-filter=".filter-books">Books</li>
-          </ul><!-- End Portfolio Filters -->
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Portfolio</h2>
+    <p>Recent web development projects showcasing my technical skills and expertise</p>
+  </div><!-- End Section Title -->
 
-          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <img src="{% static 'img/portfolio/app-1.jpg' %}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>App 1</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="{% static 'img/portfolio/app-1.jpg' %}" title="App 1" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+  <div class="container">
+    <div class="row gy-4">
+      
+      <!-- Project 1: Travel Website -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="portfolio-card">
+          <a href="https://theafsaneh-hassani.ir/" target="_blank" class="portfolio-image-link">
+            <div class="portfolio-image">
+              <img src="{% static 'img/projects/project1.png' %}" class="img-fluid" alt="Travel Website">
+              <div class="portfolio-overlay">
+                <i class="bi bi-arrow-up-right-circle"></i>
               </div>
-            </div><!-- End Portfolio Item -->
+            </div>
+          </a>
+          <div class="portfolio-content">
+            <h3><i class="bi bi-airplane"></i> Travel Website</h3>
+            <p class="portfolio-description">
+              A full-featured travel and tourism website built with Django, featuring dynamic content management and professional presentation.
+            </p>
+            
+            <div class="tech-stack">
+              <span class="tech-badge">Python</span>
+              <span class="tech-badge">Django</span>
+              <span class="tech-badge">Bootstrap</span>
+            </div>
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <img src="{% static 'img/portfolio/product-1.jpg' %}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Product 1</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="{% static 'img/portfolio/product-1.jpg' %}" title="Product 1" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <img src="{% static 'img/portfolio/branding-1.jpg' %}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Branding 1</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="{% static 'img/portfolio/branding-1.jpg' %}" title="Branding 1" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
-              <img src="{% static 'img/portfolio/books-1.jpg' %}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Books 1</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="{% static 'img/portfolio/books-1.jpg' %}" title="Branding 1" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <img src="{% static 'img/portfolio/app-2.jpg' %}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>App 2</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="{% static 'img/portfolio/app-2.jpg' %}" title="App 2" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <img src="{% static 'img/portfolio/product-2.jpg' %}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Product 2</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="{% static 'img/portfolio/product-2.jpg' %}" title="Product 2" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <img src="{% static 'img/portfolio/branding-2.jpg' %}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Branding 2</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="{% static 'img/portfolio/branding-2.jpg' %}" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
-              <img src="{% static 'img/portfolio/books-2.jpg' %}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Books 2</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="{% static 'img/portfolio/books-2.jpg' %}" title="Branding 2" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <img src="{% static 'img/portfolio/app-3.jpg' %}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>App 3</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="{% static 'img/portfolio/app-3.jpg' %}" title="App 3" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <img src="{% static 'img/portfolio/product-3.jpg' %}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Product 3</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="{% static 'img/portfolio/product-3.jpg' %}" title="Product 3" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <img src="{% static 'img/portfolio/branding-3.jpg' %}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Branding 3</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="{% static 'img/portfolio/branding-3.jpg' %}" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
-              <img src="{% static 'img/portfolio/books-3.jpg' %}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Books 3</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="{% static 'img/portfolio/books-3.jpg' %}" title="Branding 3" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-          </div><!-- End Portfolio Container -->
-
+            <div class="portfolio-links">
+              <a href="https://theafsaneh-hassani.ir/" target="_blank" class="portfolio-btn">
+                <i class="bi bi-globe"></i> View Site
+              </a>
+              <a href="https://github.com/Afsaneh-hassani" target="_blank" class="portfolio-btn btn-outline">
+                <i class="bi bi-github"></i> GitHub
+              </a>
+            </div>
+          </div>
         </div>
-
       </div>
 
-    </section><!-- /Portfolio Section -->
+      <!-- Project 2: Afsaneh Nexus -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="portfolio-card">
+          <a href="https://afsanehnexus.ir/" target="_blank" class="portfolio-image-link">
+            <div class="portfolio-image">
+              <img src="{% static 'img/projects/project2.png' %}" class="img-fluid" alt="Afsaneh Nexus">
+              <div class="portfolio-overlay">
+                <i class="bi bi-arrow-up-right-circle"></i>
+              </div>
+            </div>
+          </a>
+          <div class="portfolio-content">
+            <h3><i class="bi bi-shield-lock"></i> Afsaneh Nexus</h3>
+            <p class="portfolio-description">
+              Comprehensive Django web application with advanced authentication system and content management.
+            </p>
+            
+            <div class="tech-stack">
+              <span class="tech-badge">Django</span>
+              <span class="tech-badge">Authentication</span>
+              <span class="tech-badge">PostgreSQL</span>
+            </div>
 
-    <!-- Pricing Section -->
+            <div class="portfolio-links">
+              <a href="https://afsanehnexus.ir/" target="_blank" class="portfolio-btn">
+                <i class="bi bi-globe"></i> View Site
+              </a>
+              <a href="https://github.com/Afsaneh-hassani" target="_blank" class="portfolio-btn btn-outline">
+                <i class="bi bi-github"></i> GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3: Restaurant Landing Page -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+        <div class="portfolio-card">
+          <a href="https://afsaneh-hassani.github.io/simpleproject/" target="_blank" class="portfolio-image-link">
+            <div class="portfolio-image">
+              <img src="{% static 'img/projects/project3.png' %}" class="img-fluid" alt="Restaurant Website">
+              <div class="portfolio-overlay">
+                <i class="bi bi-arrow-up-right-circle"></i>
+              </div>
+            </div>
+          </a>
+          <div class="portfolio-content">
+            <h3><i class="bi bi-shop"></i> Restaurant Landing Page</h3>
+            <p class="portfolio-description">
+              Responsive single-page website with modern design principles and user-friendly navigation.
+            </p>
+            
+            <div class="tech-stack">
+              <span class="tech-badge">HTML5</span>
+              <span class="tech-badge">CSS3</span>
+              <span class="tech-badge">Responsive</span>
+            </div>
+
+            <div class="portfolio-links">
+              <a href="https://afsaneh-hassani.github.io/simpleproject/" target="_blank" class="portfolio-btn">
+                <i class="bi bi-globe"></i> View Site
+              </a>
+              <a href="https://github.com/Afsaneh-hassani/simpleproject" target="_blank" class="portfolio-btn btn-outline">
+                <i class="bi bi-github"></i> GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</section><!-- /Portfolio Section -->
+
+
+
+    {% comment %} <!-- Pricing Section -->
     <section id="pricing" class="pricing section">
 
       <!-- Section Title -->
@@ -739,77 +715,89 @@
 
       </div>
 
-    </section><!-- /Pricing Section -->
+    </section><!-- /Pricing Section --> {% endcomment %}
 
     <!-- Faq Section -->
-    <section id="faq" class="faq section">
+<section id="faq" class="faq section">
 
-      <div class="container">
+  <div class="container">
 
-        <div class="row gy-4">
+    <div class="row gy-4">
 
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="content px-xl-5">
-              <h3><span>Frequently Asked </span><strong>Questions</strong></h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
-              </p>
+      <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="content px-xl-5">
+          <h3><span>Frequently Asked </span><strong>Questions</strong></h3>
+          <p>
+            Here are answers to common questions about my services, development process, and how we can work together on your project.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
+
+        <div class="faq-container">
+          
+          <div class="faq-item faq-active">
+            <h3><span class="num">1.</span> <span>What technologies do you specialize in?</span></h3>
+            <div class="faq-content">
+              <p>I specialize in backend development using Python and Django framework. I'm proficient in database management with PostgreSQL and MySQL, RESTful API development, and frontend technologies including HTML, CSS, and JavaScript. I also work with Docker for containerization and Git for version control.</p>
             </div>
-          </div>
+            <i class="faq-toggle bi bi-chevron-right"></i>
+          </div><!-- End Faq item-->
 
-          <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
-
-            <div class="faq-container">
-              <div class="faq-item faq-active">
-                <h3><span class="num">1.</span> <span>Non consectetur a erat nam at lectus urna duis?</span></h3>
-                <div class="faq-content">
-                  <p>Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.</p>
-                </div>
-                <i class="faq-toggle bi bi-chevron-right"></i>
-              </div><!-- End Faq item-->
-
-              <div class="faq-item">
-                <h3><span class="num">2.</span> <span>Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque?</span></h3>
-                <div class="faq-content">
-                  <p>Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.</p>
-                </div>
-                <i class="faq-toggle bi bi-chevron-right"></i>
-              </div><!-- End Faq item-->
-
-              <div class="faq-item">
-                <h3><span class="num">3.</span> <span>Dolor sit amet consectetur adipiscing elit pellentesque?</span></h3>
-                <div class="faq-content">
-                  <p>Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis</p>
-                </div>
-                <i class="faq-toggle bi bi-chevron-right"></i>
-              </div><!-- End Faq item-->
-
-              <div class="faq-item">
-                <h3><span class="num">4.</span> <span>Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla?</span></h3>
-                <div class="faq-content">
-                  <p>Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.</p>
-                </div>
-                <i class="faq-toggle bi bi-chevron-right"></i>
-              </div><!-- End Faq item-->
-
-              <div class="faq-item">
-                <h3><span class="num">5.</span> <span>Tempus quam pellentesque nec nam aliquam sem et tortor consequat?</span></h3>
-                <div class="faq-content">
-                  <p>Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in</p>
-                </div>
-                <i class="faq-toggle bi bi-chevron-right"></i>
-              </div><!-- End Faq item-->
-
+          <div class="faq-item">
+            <h3><span class="num">2.</span> <span>How long does it take to build a website?</span></h3>
+            <div class="faq-content">
+              <p>It depends on the project scope and complexity. A simple personal website or landing page usually takes 5–10 days, while more complex web applications with advanced features, database integration, and API development may take several weeks to complete. I'll provide you with a detailed timeline after discussing your specific requirements.</p>
             </div>
+            <i class="faq-toggle bi bi-chevron-right"></i>
+          </div><!-- End Faq item-->
 
-          </div>
+          <div class="faq-item">
+            <h3><span class="num">3.</span> <span>How much do you charge for a website?</span></h3>
+            <div class="faq-content">
+              <p>Pricing depends on the features and complexity of your project. Factors include the number of pages, custom functionality, database requirements, API integrations, and design complexity. I provide a clear, transparent quote after discussing your project details and understanding your specific needs.</p>
+            </div>
+            <i class="faq-toggle bi bi-chevron-right"></i>
+          </div><!-- End Faq item-->
+
+          <div class="faq-item">
+            <h3><span class="num">4.</span> <span>Do you offer support after the project is completed?</span></h3>
+            <div class="faq-content">
+              <p>Yes, absolutely! I offer one month of free support after the final delivery. This includes bug fixes, minor adjustments, and assistance with any issues you might encounter. For ongoing maintenance and updates beyond this period, we can discuss extended support options.</p>
+            </div>
+            <i class="faq-toggle bi bi-chevron-right"></i>
+          </div><!-- End Faq item-->
+
+          <div class="faq-item">
+            <h3><span class="num">5.</span> <span>Can you update or redesign an existing website?</span></h3>
+            <div class="faq-content">
+              <p>Yes, I can work with existing codebases and websites. Whether you need to improve the design, add new features, optimize performance, migrate to Django, or completely modernize your current website, I can help. I'm experienced in refactoring code and implementing best practices in existing projects.</p>
+            </div>
+            <i class="faq-toggle bi bi-chevron-right"></i>
+          </div><!-- End Faq item-->
+
+          <div class="faq-item">
+            <h3><span class="num">6.</span> <span>How can we start a project together?</span></h3>
+            <div class="faq-content">
+              <p>Starting a project is simple! Just send me a message through the contact form below or email me directly at Afsaneh_hassani67@yahoo.com. I will respond quickly and guide you through the next steps, including discussing your requirements, providing a proposal, and establishing a project timeline.</p>
+            </div>
+            <i class="faq-toggle bi bi-chevron-right"></i>
+          </div><!-- End Faq item-->
+
         </div>
 
       </div>
+    </div>
 
-    </section><!-- /Faq Section -->
+  </div>
 
-    <!-- Testimonials Section -->
+</section><!-- /Faq Section -->
+
+
+
+
+    {% comment %} <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials section accent-background">
 
       <img src="{% static 'img/testimonials-bg.jpg' %}" class="testimonials-bg" alt="">
@@ -920,7 +908,7 @@
 
       </div>
 
-    </section><!-- /Testimonials Section -->
+    </section><!-- /Testimonials Section --> {% endcomment %}
 
     <!-- Contact Section -->
     <section id="contact" class="contact section">
