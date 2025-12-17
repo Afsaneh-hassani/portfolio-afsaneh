@@ -4,6 +4,12 @@ from website.views import *
 app_name='website'
 
 urlpatterns = [
-    path('', index_view, name='index'),
+    path('', index, name='index'),
     
 ]
+
+
+
+# urlpatterns = [
+#     path('', contact_view, name='contact'),
+# ]

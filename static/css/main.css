@@ -96,10 +96,10 @@ h6 {
   font-family: var(--heading-font);
 }
 
-/* PHP Email Form Messages
+/* django Email Form Messages
 ------------------------------*/
-.php-email-form .error-message {
-  display: none;
+.django-email-form .error-message {
+  /* display: none; */
   background: #df1529;
   color: #ffffff;
   text-align: left;
@@ -108,8 +108,8 @@ h6 {
   font-weight: 600;
 }
 
-.php-email-form .sent-message {
-  display: none;
+.django-email-form .sent-message {
+  /* display: none; */
   color: #ffffff;
   background: #059652;
   text-align: center;
@@ -118,15 +118,15 @@ h6 {
   font-weight: 600;
 }
 
-.php-email-form .loading {
-  display: none;
+.django-email-form .loading {
+  /* display: none; */
   background: var(--surface-color);
   text-align: center;
   padding: 15px;
   margin-bottom: 24px;
 }
 
-.php-email-form .loading:before {
+.django-email-form .loading:before {
   content: "";
   display: inline-block;
   border-radius: 50%;
@@ -135,10 +135,10 @@ h6 {
   margin: 0 10px -6px 0;
   border: 3px solid var(--accent-color);
   border-top-color: var(--surface-color);
-  animation: php-email-form-loading 1s linear infinite;
+  animation: django-email-form-loading 1s linear infinite;
 }
 
-@keyframes php-email-form-loading {
+@keyframes django-email-form-loading {
   0% {
     transform: rotate(0deg);
   }
@@ -1241,21 +1241,21 @@ section,
   color: var(--contrast-color);
 }
 
-.contact .php-email-form {
+.contact .django-email-form {
   background-color: var(--surface-color);
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
   padding: 30px;
 }
 
 @media (max-width: 575px) {
-  .contact .php-email-form {
+  .contact .django-email-form {
     padding: 20px;
   }
 }
 
-.contact .php-email-form input[type=text],
-.contact .php-email-form input[type=email],
-.contact .php-email-form textarea {
+.contact .django-email-form input[type=text],
+.contact .django-email-form input[type=email],
+.contact .django-email-form textarea {
   font-size: 14px;
   padding: 10px 15px;
   box-shadow: none;
@@ -1265,19 +1265,19 @@ section,
   border-color: color-mix(in srgb, var(--default-color), transparent 80%);
 }
 
-.contact .php-email-form input[type=text]:focus,
-.contact .php-email-form input[type=email]:focus,
-.contact .php-email-form textarea:focus {
+.contact .django-email-form input[type=text]:focus,
+.contact .django-email-form input[type=email]:focus,
+.contact .django-email-form textarea:focus {
   border-color: var(--accent-color);
 }
 
-.contact .php-email-form input[type=text]::placeholder,
-.contact .php-email-form input[type=email]::placeholder,
-.contact .php-email-form textarea::placeholder {
+.contact .django-email-form input[type=text]::placeholder,
+.contact .django-email-form input[type=email]::placeholder,
+.contact .django-email-form textarea::placeholder {
   color: color-mix(in srgb, var(--default-color), transparent 70%);
 }
 
-.contact .php-email-form button[type=submit] {
+.contact .django-email-form button[type=submit] {
   color: var(--contrast-color);
   background: var(--accent-color);
   border: 0;
@@ -1286,7 +1286,7 @@ section,
   border-radius: 50px;
 }
 
-.contact .php-email-form button[type=submit]:hover {
+.contact .django-email-form button[type=submit]:hover {
   background: color-mix(in srgb, var(--accent-color), transparent 20%);
 }
 
@@ -1598,3 +1598,107 @@ section,
     width: 100%;
   }
 }
+
+
+
+
+/*--------- start recent-blog Area -------------*/
+.recent-blog-area .owl-dots {
+  text-align: center;
+  bottom: 5px;
+  margin-top: 70px;
+  width: 100%;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.recent-blog-area .owl-dot {
+  height: 10px;
+  width: 10px;
+  display: inline-block;
+  background: rgba(248, 182, 0, 0.2);
+  margin-left: 5px;
+  margin-right: 5px;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.recent-blog-area .owl-dot.active {
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  background: #f8b600;
+}
+
+.recent-blog-area .single-recent-blog-post .thumb {
+  overflow: hidden;
+}
+
+.recent-blog-area .single-recent-blog-post .thumb img {
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.recent-blog-area .single-recent-blog-post .tags {
+  margin: 20px 0px;
+}
+
+.recent-blog-area .single-recent-blog-post .tags li {
+  display: inline-block;
+  border: 1px solid #eee;
+  padding: 4px 12px;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.recent-blog-area .single-recent-blog-post .tags li:hover {
+  background-color: #f8b600;
+}
+
+.recent-blog-area .single-recent-blog-post .tags li:hover a {
+  color: #fff;
+}
+
+.recent-blog-area .single-recent-blog-post .tags li a {
+  font-weight: 400;
+  font-size: 12px;
+  color: #222;
+}
+
+.recent-blog-area .single-recent-blog-post .title {
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  margin: 20px 0;
+}
+
+.recent-blog-area .single-recent-blog-post .title:hover {
+  color: #f8b600;
+}
+
+.recent-blog-area .single-recent-blog-post .date {
+  color: #222;
+  font-weight: 300;
+}
+
+@media (max-width: 575px) {
+  .recent-blog-area .single-recent-blog-post {
+    margin: 15px;
+  }
+}
+
+.recent-blog-area .single-recent-blog-post:hover .thumb img {
+  transform: scale(1.05);
+}
+
+/*--------- end recent-blog Area -------------*/
