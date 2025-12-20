@@ -1,4 +1,7 @@
+
+{% extends 'base.html' %}
 {% load static %}
+{% block content %}
 {% load blog-tags %}
 
 <link rel="stylesheet" href="{% static 'css/linearicons.css' %}">
@@ -178,3 +181,5 @@
 <script src="{% static 'js/owl.carousel.min.js' %}"></script>
 <script src="{% static 'js/mail-script.js' %}"></script>
 <script src="{% static 'js/blog.js' %}"></script>
+
+{% endblock %}

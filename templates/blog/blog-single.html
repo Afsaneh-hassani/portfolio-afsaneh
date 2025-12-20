@@ -1,9 +1,14 @@
 
+{% extends 'base.html' %}
 {% load static %}
-{%load blog-tags %}
+{% block content %}
+{% load blog-tags %}
+
+
+
 {% load humanize %}
 
-{% block content %}
+
 <link rel="stylesheet" href="{% static 'css/linearicons.css' %}">
 <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
 <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
@@ -213,7 +218,7 @@
     </div>
   </section>
   <!-- End post-content Area -->
-{% endblock %}
+
 
 
 
@@ -230,3 +235,6 @@
 <script src="{% static 'js/owl.carousel.min.js' %}"></script>
 <script src="{% static 'js/mail-script.js' %}"></script>
 <script src="{% static 'js/blog.js' %}"></script>
+
+
+{% endblock %}
