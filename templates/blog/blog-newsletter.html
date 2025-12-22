@@ -1,8 +1,9 @@
 {% load static %}
 <div class="single-sidebar-widget newsletter-widget">
     <h4 class="newsletter-title">Newsletter</h4>
-    <p>Here, I focus on a range of items and features that we use in life without giving them a second thought.</p>
-    <div class="form-group d-flex flex-row">
+    <p>Stay informed with exclusive updates, insights, and latest projects delivered directly to your inbox. Join my newsletter to never miss an opportunity.</p>
+    <form method="post" action="{% url 'blog:newsletter_subscribe' %}" class="form-group d-flex flex-row">
+      {% csrf_token %}
       <div class="col-autos">
         <div class="input-group">
           <div class="input-group-prepend">
@@ -10,10 +11,27 @@
               <i class="fa fa-envelope" aria-hidden="true"></i>
             </div>
           </div>
-          <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Enter email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email'" />
+          <input 
+            type="email" 
+            name="email" 
+            class="form-control" 
+            id="inlineFormInputGroup" 
+            placeholder="Enter email" 
+            onfocus="this.placeholder = ''" 
+            onblur="this.placeholder = 'Enter email'" 
+            required
+          />
         </div>
       </div>
-      <a href="#" class="bbtns">Subcribe</a>
-    </div>
-    <p class="text-bottom">You can unsubscribe at any time</p>
-  </div>
+      <button type="submit" class="bbtns">Subscribe</button>
+    </form>
+    <p class="text-bottom"></p>
+
+    {% if messages %}
+      <ul class="messages">
+        {% for message in messages %}
+          <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+</div>

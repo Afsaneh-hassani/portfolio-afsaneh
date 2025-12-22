@@ -2,6 +2,7 @@ from django.contrib import admin
 
 # Register your models here.
 from blog.models import Post, Category, Comment
+from .models import NewsletterEmail
 from django_summernote.admin import SummernoteModelAdmin
 
 class PostAdmin(SummernoteModelAdmin):
@@ -21,6 +22,21 @@ class CommentAdmin(admin.ModelAdmin):
     list_filter=('post','approved')
     #ordering=['-created_date']
     search_fields=['name','post']
+    
+
+
+
+class NewsletterEmailAdmin(admin.ModelAdmin):
+    list_display = ('email', 'subscribed_date')
+    search_fields = ('email',)
+    ordering = ('-subscribed_date',)
+    
+    
+    
+    
+    
+
+admin.site.register(NewsletterEmail, NewsletterEmailAdmin)
     
 
 

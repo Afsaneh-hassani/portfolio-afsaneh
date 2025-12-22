@@ -7,6 +7,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib import messages
 from blog.forms import CommentForm
 from django.contrib.auth import authenticate
+from .forms import NewsletterForm
 
 # Create your views here.
 def blog_view(request,**kwargs):
@@ -29,32 +30,48 @@ def blog_view(request,**kwargs):
     context={'posts': posts}
     return render(request,'blog/blog-home.html',context)
 
-def blog_single(request,pid):
-    if request.method=='POST':
-        form=CommentForm(request.POST)
+def blog_single(request, pid):
+    post = get_object_or_404(Post, pk=pid, status=1, published_date__lte=timezone.now())
+
+    if request.method == 'POST':
+        form = CommentForm(request.POST)
         if form.is_valid():
-            form.save()
-            messages.add_message(request,messages.SUCCESS,'your comment submitted successfully')
+            new_comment = form.save(commit=False)
+            new_comment.post = post
+            new_comment.approved = True
+            new_comment.save()
+            messages.success(request, 'Your comment submitted successfully.')
+            return redirect('blog:single', pid=pid)
         else:
-            messages.add_message(request,messages.ERROR,'your comment did not submit')
-    
-
-    posts=Post.objects.filter(published_date__lte=timezone.now(),status=1)
-    post=get_object_or_404(posts ,pk=pid)
-    if not post.login_requires or request.user.is_authenticated:
-        comments=Comment.objects.filter(post=post.id, approved=True)
-        previous_post=Post.objects.filter(created_date__gt=post.created_date,published_date__lte=timezone.now(),status=1 ).order_by('created_date').first()
-        next_post=Post.objects.filter(created_date__lt=post.created_date,published_date__lte=timezone.now(),status=1 ).order_by('-created_date').first()
-    
-        post.counted_view=post.counted_view+1
-        post.save()
-        form=CommentForm()
-        context={'post': post, 'previous_post':previous_post , 'next_post':next_post,'comments':comments,'form':form}
-    
-        return render(request,'blog/blog-single.html',context)
+            messages.error(request, 'Your comment did not submit. Please correct the errors below.')
     else:
-        return HttpResponseRedirect(reverse('accounts:login'))
+        form = CommentForm()
 
+    comments = Comment.objects.filter(post=post, approved=True).order_by('-created_date')
+
+    previous_post = Post.objects.filter(
+        created_date__gt=post.created_date,
+        published_date__lte=timezone.now(),
+        status=1
+    ).order_by('created_date').first()
+
+    next_post = Post.objects.filter(
+        created_date__lt=post.created_date,
+        published_date__lte=timezone.now(),
+        status=1
+    ).order_by('-created_date').first()
+
+    post.counted_view += 1
+    post.save()
+
+    context = {
+        'post': post,
+        'comments': comments,
+        'form': form,
+        'previous_post': previous_post,
+        'next_post': next_post,
+    }
+    return render(request, 'blog/blog-single.html', context)
         
 def test(request):
     return render(request,'test.html')
@@ -75,3 +92,18 @@ def blog_search(request):
             
     context={'posts': posts}
     return render(request,'blog/blog-home.html',context)
+
+
+
+def newsletter_subscribe(request):
+    if request.method == 'POST':
+        form = NewsletterForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Thank you for subscribing to my newsletter!")
+            return redirect(request.META.get('HTTP_REFERER', '/'))  
+        else:
+            messages.error(request, "There was a problem with your submission.")
+            return redirect(request.META.get('HTTP_REFERER', '/'))
+    else:
+        return redirect('/')
