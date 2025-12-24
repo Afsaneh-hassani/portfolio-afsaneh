@@ -686,7 +686,7 @@ section,
 
 .hero:before {
   content: "";
-  background: color-mix(in srgb, var(--background-color), transparent 60%);
+  background: color-mix(in srgb, var(--background-color), transparent 45%);
   position: absolute;
   inset: 0;
   z-index: 2;
@@ -695,7 +695,10 @@ section,
 .hero .container {
   position: relative;
   z-index: 3;
-}
+  margin-top: 150px; /* تقریباً معادل 1cm */
+}   
+
+
 
 .hero h2 {
   margin: 0;

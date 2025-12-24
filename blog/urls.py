@@ -2,7 +2,7 @@
 from django.urls import path
 from blog.views import *
 from .views import newsletter_subscribe
-# from blog.feeds import LatestEntriesFeed
+from blog.feeds import LatestEntriesFeed
 
 app_name='blog'
 urlpatterns = [
@@ -16,7 +16,7 @@ urlpatterns = [
     path('test',test, name='test'),
     path('search/', blog_search, name='search'),
     path('newsletter/subscribe/', newsletter_subscribe, name='newsletter_subscribe'),
-    # path("rss/feed/", LatestEntriesFeed()),
+    path("rss/feed/", LatestEntriesFeed(), name='rss'),
     
 ]
 

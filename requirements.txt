@@ -1,4 +1,11 @@
 asgiref==3.11.0
+bleach==6.3.0
+captcha==0.7.1
 Django==5.2.8
+django-summernote==0.8.20.0
+django-taggit==6.1.0
+humanize==4.14.0
+pillow==12.0.0
 sqlparse==0.5.3
 tzdata==2025.2
+webencodings==0.5.1
