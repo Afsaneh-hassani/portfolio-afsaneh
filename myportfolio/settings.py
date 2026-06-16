@@ -29,6 +29,7 @@ ALLOWED_HOSTS = [
     "portfolio-afsaneh-1.onrender.com",
     "afsanehhassani.com",
     "www.afsanehhassani.com",
+    "127.0.0.1",
 ]
 
 
