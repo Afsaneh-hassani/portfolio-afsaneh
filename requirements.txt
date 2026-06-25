@@ -5,7 +5,9 @@ dj-database-url==3.1.2
 Django==5.2.8
 django-summernote==0.8.20.0
 django-taggit==6.1.0
+gunicorn==26.0.0
 humanize==4.14.0
+packaging==26.2
 pillow==12.0.0
 psycopg2-binary==2.9.12
 sqlparse==0.5.3
